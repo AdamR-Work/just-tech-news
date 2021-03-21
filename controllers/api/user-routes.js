@@ -66,7 +66,7 @@ router.post('/',withAuth, (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-
+  
         res.json(dbUserData);
       });
     })
@@ -99,7 +99,7 @@ router.post('/login', withAuth, (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-
+  
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });
@@ -110,7 +110,8 @@ router.post('/logout', withAuth, (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  } else {
+  }
+  else {
     res.status(404).end();
   }
 });
