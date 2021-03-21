@@ -1,5 +1,3 @@
-
-
 async function deleteFormHandler(event) {
     event.preventDefault();
     const id = window.location.toString().split('/')[
